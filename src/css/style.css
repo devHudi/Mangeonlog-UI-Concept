@@ -1,0 +1,324 @@
+@import url(http://cdn.jsdelivr.net/font-kopub/1.0/kopubbatang.css);
+@import url(http://cdn.jsdelivr.net/font-kopub/1.0/kopubdotum.css);
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+
+* {
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Kopub Dotum', sans-serif;
+}
+
+.wrapper {
+  display: table;
+  width: 100%; height: 100%;
+  text-align: center;
+}
+
+  .wrapper > .content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+nav {
+  background-color: #FFFFFF;
+  width: 100%; height: 66px;
+  text-align: center;
+}
+
+  nav ul {
+    display: inline-block;
+    list-style: none;
+    overflow: auto;
+  }
+
+    nav ul li {
+      margin-right: 20px;
+      padding: 22px 10px;
+      font-size: 12pt;
+      font-weight: normal;
+      float: left;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    nav ul li.activated {
+      border-bottom: 4px solid #EC4566;
+    }
+
+    nav ul li:hover {
+      color: #EC4566;
+    }
+
+    nav ul li:last-child {
+      margin-right: 0;
+    }
+
+nav.non-fixed {
+  position: absolute;
+  opacity: 0;
+  bottom: 0;
+  transition: all 1s;
+}
+
+nav.non-fixed.activated {
+  opacity: 1;
+}
+
+nav.fixed {
+  position: fixed;
+  opacity: 0;
+  background-color: #FFFFFF;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+  z-index: 999;
+}
+
+nav.fixed.activated {
+  opacity: 1;
+}
+
+header {
+  height: 100%;
+  background-color: #FFFFFF;
+}
+
+  header .logo {
+    position: relative;
+    top: -10px;
+    opacity: 0;
+    width: 350px;
+    margin-bottom: 30px;
+    transition: all 1s;
+  }
+
+  header .logo.activated {
+    top: 0;
+    opacity: 1;
+  }
+
+  header p {
+    opacity: 0;
+    font-size: 18pt;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: lighter;
+    line-height: 160%;
+    color: #343434;
+    transition: all 1s;
+  }
+
+  header p.activated {
+    opacity: 1;
+  }
+
+    header p b {
+      display: inline-block;
+      padding: 0 5px;
+      background-color: #222831;
+      font-weight: 300;
+      color: white;
+    }
+
+section#intro {
+  height: 90%;
+  padding: 0 10px;
+  text-shadow: 0 0 5px rgba(0,0,0,.8);
+}
+
+  section#intro h1 {
+    margin-bottom: 40px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 40pt;
+    font-weight: 700;
+    color: #EEEEEE;
+    text-align: center;
+  }
+
+  section#intro p {
+    font-size: 13pt;
+    font-weight: lighter;
+    line-height: 230%;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+  }
+
+    section#intro p span {
+      display: block;
+      margin-top: 30px;
+      font-size: 10pt;
+      font-family: 'Nanum Myeongjo', serif;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+  section#intro hr {
+    margin: 30px auto;
+    width: 50px;
+    border: 4px solid #EEEEEE;
+  }
+
+section#gaffe {
+  background-color: #FFFFFF;
+  padding: 100px 10px;
+}
+
+  section#gaffe > h1 {
+    margin-bottom: 12px;
+    font-family: 'Nanum Myeongjo', sans-serif;
+    font-size: 30pt;
+    font-weight: bolder;
+    text-align: center;
+  }
+
+  section#gaffe > p {
+    font-size: 12pt;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  section#gaffe > hr {
+    width: 25px;
+    border: 2px solid #333333;
+    margin: 30px auto;
+  }
+
+  section#gaffe .saying {
+    position: relative;
+    background-color: #fbfbfb;
+    border: 1px solid #EEEEEE;
+    border-radius: 10px;
+    padding: 15px; box-sizing: border-box;
+    margin: 20px auto;
+    width: 100%; max-width: 600px;
+    overflow: auto;
+    cursor: pointer;
+    top: 0;
+    transition: all 0.3s;
+  }
+
+  section#gaffe .saying:hover {
+    top: -8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+  }
+
+  section#gaffe .saying:active {
+    top: 0;
+    box-shadow: none;
+  }
+
+    section#gaffe .saying .image {
+      background-size: cover;
+      background-position: center center;
+      border-radius: 50%;
+      width: 100px; height: 100px;
+      float: left;
+    }
+
+    section#gaffe .saying .text {
+      width: calc(100% - 130px);
+      margin-left: 20px;
+      height: 100px;
+      float: left;
+    }
+
+      section#gaffe .saying .text .person {
+        font-size: 13pt;
+        color: rgba(0, 0, 0, .8);
+        letter-spacing: -1px;
+      }
+
+      section#gaffe .saying .text .date {
+        font-size: 10pt;
+        color: rgba(0, 0, 0, .4);
+        letter-spacing: -1px;
+      }
+
+      section#gaffe .saying .text p {
+        display: inline-block;
+        padding: 0 23px;
+        background-image: url(../img/quote_left.png), url(../img/quote_right.png);
+        background-position: top left, top right;
+        background-size: 12px;
+        background-repeat: no-repeat;
+        margin-top: 20px; padding-top: 5px;
+        font-size: 14pt;
+        color: #333333;
+        letter-spacing: -1px;
+      }
+
+section#sns {
+  background-color: #2C3D4F;
+  padding: 100px 10px;
+}
+
+  section#sns > h1 {
+    margin-bottom: 12px;
+    font-family: 'Nanum Myeongjo', sans-serif;
+    font-size: 30pt;
+    font-weight: bolder;
+    text-align: center;
+    color: #EEEEEE;
+  }
+
+  section#sns > p {
+    font-size: 12pt;
+    font-weight: 300;
+    text-align: center;
+    color: #EEEEEE;
+  }
+
+  section#sns > hr {
+    width: 25px;
+    border: 2px solid #EEEEEE;
+    margin: 30px auto;
+  }
+
+  section#sns .num {
+    font-size: 10pt;
+    font-weight: lighter;
+    color: #EEEEEE;
+    text-align: center;
+  }
+
+  section#sns .box {
+    width: 50%;
+    padding: 15px; margin: 20px auto;
+    box-sizing: border-box;
+    border: 1px solid #FFFFFF;
+    font-family: "Spoqa Han Sans", sans-serif;
+    font-weight: lighter;
+    color: #EEEEEE;
+    cursor: pointer;
+    transition: all 0.1s;
+  }
+
+  section#sns .box:hover {
+    background-color: rgba(255, 255, 255, .1);
+  }
+
+    section#sns .box .id {
+      display: inline-block;
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 12pt;
+    }
+
+    section#sns .box .content {
+      display: inline-block;
+      font-size: 12pt;
+      line-height: 140%;
+    }
+
+    section#sns .box .date {
+      display: inline-block;
+      font-size: 10pt;
+      margin-top: -2pt;
+      margin-left: 10px;
+      color: rgba(255, 255, 255, .5);
+    }
